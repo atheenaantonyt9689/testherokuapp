@@ -10,7 +10,11 @@
     {% for book in object_list %}
     <div class="my-3 col-md-4">
       <div class="card h-100">
+        {% if book.image %}
         <img src="{{book.image.url}}">
+        {% else %}
+        <img src="https://res.cloudinary.com/dpgy8pcbk/image/upload/v1/media/images/61QrCdBXSTL._SX569__x4rj6u">
+        {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ book.title }}</h5>
           <p class="card-text">{{ book.description }}</p>
